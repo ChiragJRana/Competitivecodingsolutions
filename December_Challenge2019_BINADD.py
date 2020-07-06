@@ -1,0 +1,12 @@
+from sys import stdin, stdout
+for i in range(int(stdin.readline())):
+    stra = int(stdin.readline(), 2)
+    strb = int(stdin.readline(), 2)
+    count = 0
+    while (strb != 0):
+        v = stra & strb
+        stra = stra ^ strb
+        strb = v * 2
+        count += 1
+    print(count)
+	
