@@ -1,11 +1,7 @@
-from collections import OrderedDict, defaultdict
-lisss = [9,9,9,2,4,5,9,6,6,8,2,2,3,3,5,6]
-liss = defaultdict(list)
-print(liss)
-for i,item in enumerate(lisss):
-    liss[item].append(i)
-liss = OrderedDict(sorted(liss.items(), reverse = True))
-print(liss)
-print(liss[next(iter(liss))])
-print(list(liss.keys()))
-print(list(liss.values()))
+from sys import stdin,stdout
+# val = [4,5,6,1,2,3,8,4,6,5,2]
+# val = list(map(str, val))
+# s = '\n'
+# stdout.write(s.join(map(str,val)))
+# for i in xrange(5):
+    # print(i)
