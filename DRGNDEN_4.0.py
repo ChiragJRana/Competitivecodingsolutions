@@ -90,5 +90,5 @@ if __name__=='__main__':
         function(N,y,power,query[i])
     t2 = time.process_time()
     print(f'Time :{t2-t1}')
-# # 9 2 5 6 7 2 3 4 5 6 7 8 9 10 8 
+# 9 2 5 6 7 2 3 4 5 6 7 8 9 10 8 
 # 5 13 24 26 25 24 5 6 2 4 52 2 4 2 2 

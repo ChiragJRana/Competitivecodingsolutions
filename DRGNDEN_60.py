@@ -7,41 +7,42 @@ if __name__ == '__main__':
     queries = [list(map(int,stdin.readline().split())) for x in range(Q)]
     k = 1
     ans = []
-    value = dict()
+    # value = dict()
+    sub_y = []
     append = ans.append
-    clear = value.clear
-    get = value.get
-    
+    y_values = []
     for query in queries:
-        lm = 0
+        lmx = 0
         start = query[1]-1
         end = query[2]-1
-        clear()
-                
+        cost = 0      
         if query[0] == 1:
             power[start] = query[2]
             continue
         
         if start > end:
             k = 1
+            sub_y = y[end:start+k:k]
         elif start < end:
             k = -1
+            sub_y = y[start:end-k:-k][::-1]
         else:
             append(power[end])
-            continue
-
-        if max(y[end:start:k]) >= y[start]:
-            append(-1)
-            continue
+            continue        
         
-        for i in range(end,start+k,k):
-            if lm < y[i] :
-                lm = y[i]
-                value[y[i]] = get(y[i],power[i])
+        for i in range(end,start,k):
+            if lmx < y[i] :
+                lmx = y[i]
+                if y[i] >= y[start+k]:
+                    cost = -1
+                    break
+                cost += power[i]
 
-        append(sum(value.values()))
+        append(cost)
 
-stdout.write('\n'.join(map(str,ans)))
+    stdout.write('\n'.join(map(str,ans)))
+
+
 # Python Performance :: Avoid using Global variable i.e avoid .s rather define a variable outside the for loop and use it
 # 15 5
 # 5 2 6 7 2 3 5 9 6 2 4 5 3 6 5
